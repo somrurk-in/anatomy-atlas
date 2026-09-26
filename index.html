@@ -1,0 +1,30 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Anatomy"><link rel="apple-touch-icon" href="icon-180.png"><link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#e9eceb">
+<title>Anatomy Atlas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;600;700&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+:root{--bg:#e9eceb;--panel:#fbfcfb;--ink:#18211f;--muted:#5a6966;--line:#d5dcda;--accent:#23686c}
+@media (prefers-color-scheme:dark){:root{--bg:#101614;--panel:#18201e;--ink:#e3ebe8;--muted:#95a6a2;--line:#2c3935;--accent:#6db4b3;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Thai",system-ui,sans-serif;padding:calc(env(safe-area-inset-top,0px) + 28px) 16px calc(env(safe-area-inset-bottom,0px) + 28px)}
+main{max-width:720px;margin:0 auto}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:32px;margin:4px 0 4px;letter-spacing:-.02em}p{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+a.card,div.card{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:var(--panel);border:1px solid var(--line);text-decoration:none;color:inherit}
+a.card:hover{border-color:var(--accent)}
+.card img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.card b{display:block;font-size:17px}.card span{color:var(--muted);font-size:13px}
+.soon{opacity:.55}.ph{width:64px;height:64px;border-radius:10px;border:1.5px dashed var(--line)}
+footer{margin-top:28px;font-size:11.5px;color:var(--muted)}
+</style></head><body><main>
+<div class="eyebrow">Interactive anatomy</div><h1>Anatomy Atlas</h1><p>โมเดล 3D สำหรับอธิบายคนไข้ เลือกข้อที่ต้องการ</p>
+<div class="grid">
+<a class="card" href="shoulder/"><img src="shoulder/icon-180.png" alt=""><div><b>ไหล่ · Shoulder</b><span>Approach + กายภาพ · 18 tests</span></div></a>
+<a class="card" href="hip/"><img src="hip/icon-180.png" alt=""><div><b>สะโพก · Hip</b><span>Approach + กายภาพ · เส้นประสาท · 9 tests</span></div></a>
+<a class="card" href="knee/"><img src="knee/icon-180.png" alt=""><div><b>เข่า · Knee</b><span>Approach + กายภาพ · ACL/PCL · 13 tests</span></div></a>
+</div>
+<footer>โมเดลจาก Z-Anatomy (CC BY-SA 4.0) พัฒนาจาก BodyParts3D © DBCLS (CC BY-SA 2.1 JP)</footer>
+</main></body></html>
