@@ -306,8 +306,8 @@ const TESTS = {
   how:['วางฝ่ามือบนหน้าท้อง ข้อมือตรง','กดท้องพร้อมดันศอกมาด้านหน้า'],pos:'ศอกตกไปด้านหลัง หรือต้องงอข้อมือเพื่อกด',
   f:[{p:{plane:90,elev:20,elbow:95,rot:-78,pron:120},t:2000,h:400},{p:{plane:90,elev:28,elbow:95,rot:-82,pron:120},t:800,h:900,ar:'elbow'},{p:{plane:90,elev:20,elbow:95,rot:-78,pron:120},t:800,h:300}],arrow:{dir:[0,0,1],label:'ศอกต้องอยู่ด้านหน้า'},q:'belly press test subscapularis'},
  bearhug:{cat:'Rotator cuff',th:'Bear hug test',tt:'Subscapularis (ส่วนบน)',targets:['subsc'],
-  how:['วางฝ่ามือบนไหล่ด้านตรงข้าม ศอกยกไปด้านหน้า','ผู้ตรวจดึงมือออก (ทิศ ER) ผู้ป่วยกดต้าน'],pos:'รักษามือไว้บนไหล่ไม่ได้',
-  f:[{p:{plane:120,elev:75,elbow:135,rot:-30,pron:150},t:2000,h:400},{p:{plane:115,elev:75,elbow:130,rot:-18,pron:150},t:800,h:900,ar:'hand'},{p:{plane:120,elev:75,elbow:135,rot:-30,pron:150},t:800,h:300}],arrow:{dir:[-0.6,0,0.8],label:'ผู้ตรวจดึงออก'},q:'bear hug test subscapularis'},
+  how:['วางฝ่ามือข้างที่ตรวจบนไหล่ด้านตรงข้าม นิ้วเหยียด ศอกยกไปด้านหน้าใต้ระดับไหล่เล็กน้อย','ผู้ตรวจพยายามดึงมือออกจากไหล่ในทิศหมุนออก (ER) ผู้ป่วยกดมือไว้ด้วยการหมุนเข้า'],pos:'รักษามือไว้บนไหล่ไม่ได้ หรืออ่อนแรงกว่าอีกข้าง >20%',
+  f:[{p:{plane:115,elev:75,elbow:100,rot:-110,pron:150},t:2200,h:500},{p:{plane:115,elev:75,elbow:100,rot:-98,pron:150},t:800,h:900,ar:'hand'},{p:{plane:115,elev:75,elbow:100,rot:-110,pron:150},t:800,h:400}],arrow:{dir:[0,0.15,1],label:'ผู้ตรวจดึงมือออก'},q:'bear hug test subscapularis'},
  neer:{cat:'Impingement',th:'Neer impingement sign',tt:'Subacromial space',targets:['supra','sab','caL'],
   how:['ผู้ตรวจกดกระดูกสะบักไว้ไม่ให้หมุนตาม','ยกแขนผู้ป่วยไปข้างหน้าจนสุดในท่าหมุนเข้า'],pos:'ปวดช่วงท้ายของการยกแขน',note:'Neer test: ถ้าฉีดยาชาเข้า subacromial space แล้วปวดหายไป สนับสนุน impingement',
   f:[{p:{plane:60,elev:10,rot:-45,pron:90,rhythm:0.12},t:1000,h:200},{p:{plane:60,elev:165,rot:-45,pron:90,rhythm:0.12},t:2300,h:900,ar:'elbow'},{p:{plane:60,elev:10,rot:-45,pron:90,rhythm:0.12},t:1600,h:300}],arrow:{dir:[0,1,0],label:'ผู้ตรวจยกแขน'},q:'Neer impingement sign'},
@@ -841,6 +841,6 @@ function loop(now){
 buildStructTab(); syncVis(); buildApproachTab(); buildMotionTab(); buildTestTab(); defaultDetail(); refresh(); applyPose(); resize();
 $('loading').remove();
 requestAnimationFrame(loop);
-window.__dbg={iVis,syncVis,snap:v=>{camAnim=null;camera.position.copy(V(VIEWS[v]));controls.target.copy(TGT);controls.update();},setPose:p=>{anim=null;Object.assign(pose,full(p));applyPose();},playTest,playMotion,setView,select,S,TESTS,camera,controls,pose:()=>pose,gVis,refresh};
+window.__dbg={handAt:p=>{const b=bones(full(p));return {hand:app(b[5],handPt).toArray(),elbow:app(b[3],J.elbowC).toArray(),wrist:app(b[4],J.ulnHead).toArray(),thumb:app(b[5],thumbPt).toArray()};},J,iVis,syncVis,snap:v=>{camAnim=null;camera.position.copy(V(VIEWS[v]));controls.target.copy(TGT);controls.update();},setPose:p=>{anim=null;Object.assign(pose,full(p));applyPose();},playTest,playMotion,setView,select,S,TESTS,camera,controls,pose:()=>pose,gVis,refresh};
 </script>
 </body></html>
